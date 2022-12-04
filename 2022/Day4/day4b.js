@@ -1,6 +1,6 @@
 input = require('./input')
 
-const areContained = pair => {
+const doOverlap = pair => {
   let [range1, range2] = pair.split(',')
   let [start1, end1] = range1.split('-');
   let [start2, end2] = range2.split('-');
@@ -27,7 +27,7 @@ const main = str => {
   const pairs = str.split('\n');
 
   for (const pair of pairs) {
-    if (areContained(pair)) total++;
+    if (doOverlap(pair)) total++;
   }
 
   return total;
